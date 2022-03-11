@@ -19,7 +19,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'solar year',
+      title: 'health bar',
       template: './src/index.html',
       inject: 'body'
     }),
@@ -39,6 +39,19 @@ module.exports = {
             }
           }
 
+        ]
+      },
+
+      {
+        test: /\.wav$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              // outputPath: 'assets/sound/'
+            }
+          }
         ]
       },
 
